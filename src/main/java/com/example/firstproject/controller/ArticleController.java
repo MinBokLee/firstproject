@@ -25,7 +25,7 @@ public class ArticleController {
         return "articles/new";
     }
 
-    @PostMapping("/articles/create")
+    @PostMapping("/articles/create") //articles/create로 던지고 받는다.
     public String createArticle(ArticleForm form ){
         log.info(form.toString());
 
@@ -36,6 +36,7 @@ public class ArticleController {
                 Article article = form.toEntity();
                 log.info(article.toString());
          // System.out.println(article.toString());
+
         // 2. Repoistory에게 Entity를 DB안에 저장하게 함.
         Article saved = articleRepository.save(article);
                 log.info(saved.toString());
