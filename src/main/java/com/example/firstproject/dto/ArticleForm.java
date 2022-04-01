@@ -2,9 +2,11 @@ package com.example.firstproject.dto;
 
 import com.example.firstproject.entity.Article;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @AllArgsConstructor // lombok(기본 생성자 생성)
+@NoArgsConstructor //lombok 디폴트 생성자를 추가!
 @ToString // lombok(ToString 생성)
 public class ArticleForm {
 
@@ -15,4 +17,5 @@ public class ArticleForm {
     public Article toEntity() {
         return new Article(id, title, content);
     }
+
 }
